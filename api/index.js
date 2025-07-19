@@ -12,9 +12,11 @@ app.use(express.json())
 app.use(express.urlencoded({extended:true}));
 
 app.use(cors({
-  origin: "https://glb-visualizer.vercel.app",
+  origin: ["https://glb-visualizer.vercel.app"],
+  methods: ["GET", "POST", "PUT", "DELETE"],
   credentials: true
 }));
+
 
 dbConnect()
 
