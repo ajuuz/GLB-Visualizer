@@ -3,9 +3,7 @@ const app = express();
 const cors = require('cors')
 const router = require('./routers/router');
 const dotenv = require('dotenv');
-const mongoose = require('mongoose');
-
-
+const dbConnect = require('./config/dbConnect');
 dotenv.config()
 
 const PORT = process.env.PORT;
@@ -18,9 +16,7 @@ app.use(cors({
     credentials: true,
 })); 
 
-mongoose.connect(process.env.DATABASE_URI)
-.then(()=>console.log('database connected'))
-.catch(()=>console.log('failed to connect database'))
+dbConnect()
 
 app.use('/',router);
 

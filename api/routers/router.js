@@ -1,9 +1,11 @@
 const express = require('express')
+const upload = require('../config/multer')
+const { addNewModel, getModels, getModel } = require('../controllers/modelController')
 
 const router = express.Router()
 
-router.post('/models',(req,res,next)=>{})
-router.get('/models',(req,res,next)=>{})
-router.get('/models/:modelId',(req,res,next)=>{})
+router.post('/models',upload.single('model'),addNewModel)
+router.get('/models',getModels)
+router.get('/models/:modelId',getModel)
 
 module.exports = router;
