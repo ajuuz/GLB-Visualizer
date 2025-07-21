@@ -12,7 +12,7 @@ app.use(express.json())
 app.use(express.urlencoded({extended:true}));
 
 app.use(cors({
-  origin: ["https://glb-visualizer.vercel.app"],
+  origin: ["https://glb-visualizer.vercel.app","http://localhost:5173"],
   methods: ["GET", "POST", "PUT", "DELETE"],
   credentials: true
 }));

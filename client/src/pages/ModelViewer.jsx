@@ -12,6 +12,14 @@ const ModelViewer = () => {
         dispatch(fetchModelUrl(modelId))
     },[modelId,dispatch])
 
+  if(loading){
+    return <div>Loading...</div>
+  }
+
+  if(error){
+    return <div>Loading...</div>
+  }
+
   return (
    <div className="w-full h-screen bg-black flex items-center justify-center">
       {loading && <p className="text-white">Loading...</p>}
