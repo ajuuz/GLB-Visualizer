@@ -12,6 +12,8 @@ const ModelViewer = () => {
         dispatch(fetchModelUrl(modelId))
     },[modelId,dispatch])
 
+
+  console.log(loading)
   if(loading){
     return <div>Loading...</div>
   }
@@ -33,7 +35,7 @@ const ModelViewer = () => {
           camera-controls
           ar
            exposure="1.0"
-  shadow-intensity="1"
+          shadow-intensity="1"
           style={{ width: '80vw', height: '80vh' }}
         />
       )}

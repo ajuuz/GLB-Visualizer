@@ -11,6 +11,9 @@ const Dashboard = () => {
     dispatch(fetchModels());
   }, [dispatch]);
 
+  if(loading){
+    return <div className='w-full h-screen flex justify-center items-center'>Loading ...</div>
+  }
   return (
     <div className='min-h-screen w-full bg-gray-100 p-6'>
       <h1 className='text-2xl font-bold mb-6 text-center'>Dashboard</h1>
